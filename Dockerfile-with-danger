@@ -1,0 +1,18 @@
+FROM circleci/ruby:2.3-node-browsers
+LABEL maintainer="Takeshi Ihara <afrontier829@gmail.com>"
+LABEL Description="Docker Container for textlint and danger"
+
+USER root
+
+COPY ./package.json ./package-lock.json /app/
+COPY ./.textlintrc /app/
+
+COPY ./Dangerfile /app/
+COPY ./Gemfile ./Gemfile.lock ./.bundle /app/
+
+WORKDIR /app
+
+RUN bundle install
+RUN npm install
+
+CMD bundle exec danger
