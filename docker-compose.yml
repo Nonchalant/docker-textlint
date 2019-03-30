@@ -1,0 +1,8 @@
+version: '2'
+services:
+  lint:
+    image: nonchalant/textlint:0.0.1
+    volumes:
+      - .:/app/volume
+    environment:
+      TXT: README.md

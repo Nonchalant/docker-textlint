@@ -1,0 +1,23 @@
+{
+    "plugins": [
+        "review"
+    ],
+    "rules": {
+        "textlint-rule-preset-ja-technical-writing": {
+            "ja-no-mixed-period": {
+                "periodMark": "。",
+                "allowPeriodMarks": ["。", "、", ".", ","]
+            },
+            "max-comma": {
+                "max": 5
+            },
+            "max-ten": {
+                max: 5
+            },
+            "no-exclamation-question-mark": false,
+            "sentence-length": {
+                max: 150
+            }
+        }
+    }
+}
